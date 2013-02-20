@@ -258,6 +258,8 @@ public with sharing class USPS {
 	
 	static testMethod void TestUSPS() {
 	
+		Test.StartTest();
+		
 		USPSAddress MyAddress = new USPSAddress();
 		
 		// will return the default address		
@@ -272,6 +274,7 @@ public with sharing class USPS {
 		MyAddress.City = 'NULL';
 		USPS.CheckAddress(MyAddress,'Test');
 		
+		Test.StopTest();
 	} // TestUSPS
 	
 } // end USPS Class

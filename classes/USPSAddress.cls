@@ -92,6 +92,8 @@ public class USPSAddress {
 		
 		static testMethod void TestUSPSAddress() {
 			
+			Test.StartTest();
+			
 			USPSAddress MyAddress = new USPSAddress();
 			
 			// test the has data method
@@ -156,6 +158,8 @@ public class USPSAddress {
 				MyAddress.Zip4 = '1441';
 				MyAddress.getZip();
 			// end testing of GetZip Method
+			
+			Test.StopTest();
 		} // TestUSPSAddress
 
 	} // class USPSAddress

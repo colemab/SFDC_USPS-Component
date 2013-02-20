@@ -174,11 +174,15 @@ public with sharing class USPS_Address_Comp_Controller {
 		
 		Lead TestLead = new Lead();
 
-		// I am using the standard USPS test request #1 here
+		// I am using the standard USPS test request #1 here because
+		// it will match the results but any address you pass in
+		// during testing will return this test data.
 		TestLead.Street = '6406 IVY LN';
 		TestLead.City = 'GREENBELT';
 		TestLead.State = 'MD';
 		TestLead.PostalCode = '20770';
+		
+		Test.StartTest();
 		
 		USPS_Address_Comp_Controller MyController = new USPS_Address_Comp_Controller();
 		
@@ -235,8 +239,10 @@ public with sharing class USPS_Address_Comp_Controller {
 		MyController.PreviousAddress.City = MyController.Address2Check.City;
 		MyController.PreviousAddress.State = 'AL';
 		MyController.DidTheAddressChange();
-		
 		// end testing for DidTheAddressChange
+		
+		Test.StopTest();
+		
 	} // TestUSPS_Address_Comp_Controller
 	
 } // end USPS_Address_Comp_Controller class
