@@ -55,7 +55,7 @@ public class USPSAddress {
 					ReturnValue = true;
 				} // have city and state OR Zip
 				
-			} // Address1 != ''
+			} // Address2 != ''
 			
 			system.debug('>>>>>> CanCheckAddress: Returning: ' + ReturnValue);
 			return ReturnValue;

@@ -1,0 +1,35 @@
+<apex:page standardcontroller="Lead" extensions="USPSTest" showHeader="false"  standardStylesheets="true" cache="false">
+
+	<c:USPS_Address LeadObject="{!CurrentLead}" CheckFullZip="true" USPS_USERID="{!USPSUserIDCode}" />
+
+	<apex:form id="ContributionRequestForm">
+	    <h2>Organization Information:</h2>
+	    <table width="98%" border="0">
+		      <tr>
+			        <td><h3>Street:</h3></td>
+			        <td><apex:inputField value="{! Lead.Street}" id="Street" style="font-family:MS Shell Dlg;font-size:	13.3333px;"/></td>
+			        <td><h3>City:</h3></td>
+			        <td><apex:inputField value="{! Lead.City}" id="City"/></td>
+			        <td><h3>State:</h3></td>
+			        <td><apex:inputField value="{! Lead.State}" id="State"/></td>
+		      </tr>
+		      <tr>
+			        <td><h3>Zip code:</h3></td>
+			        <td><apex:inputField value="{! Lead.PostalCode}" id="PostalCode"/></td>
+			        <td><h3>County:</h3></td>
+			        <td><apex:inputField value="{! Lead.County__c}" id="County"/></td>
+			        <td><h3>Phone:</h3></td>
+			        <td><apex:inputField value="{! Lead.Phone}" id="Phone"/></td>
+		      </tr>
+		      <tr><td><br/></td></tr>
+	    </table>
+	
+        <center>
+            <br/>
+            <apex:commandButton action="{!validate}" value="Submit Form" />
+            <apex:pageMessages />
+        </center>        
+	
+	</apex:form>
+	
+</apex:page>

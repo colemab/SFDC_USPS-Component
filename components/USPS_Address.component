@@ -6,37 +6,13 @@
 		
 	<apex:attribute required="True" name="USPS_USERID" assignTo="{!USPS_USERID}" type="String" description="This is the USER ID for the API Call. Set this after all other attributes."/>		
 			
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>	 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="http://cachedcommons.org/cache/jquery-blockui/2.3.3/javascripts/jquery-blockui-min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
 
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
 				
 	<apex:outputPanel ID="USPSADDRESSINFO" rendered="{!DisplayPopUp}">
-
-		<script type="text/javascript"> 
-		
-			  j$ = jQuery.noConflict(); 
-			
-			    function blockme() {
-			        
-			        closeDialog();
-			        j$.blockUI();		        
-			         			
-			    }
-			    
-			    function closeDialog() {
-			    	j$("#dialog").dialog( "close" );
-			    }
-			    
-
-				function PopWindowOut() {
-					j$("#dialog").dialog({ resizable: false, width: 'auto', modal: true});
-				}
-
-			    j$("#dialog").dialog({ resizable: false, width: 'auto', modal: true});
-			      	        		        
-		</script> 		
 
 		<div id="dialog" title="Address Verification">
 			<apex:form >															
@@ -105,5 +81,28 @@
 				</table>	
 			</apex:form>																									
 		</div>
+		
+		<script type="text/javascript"> 
+		
+			  j$ = jQuery.noConflict(); 
+			  j$("#dialog").dialog({ resizable: false, width: 'auto', modal: true});
+			  			  
+			    function blockme() {
+			        
+			        closeDialog();
+			        j$.blockUI();		        
+			         			
+			    }
+			    
+			    function closeDialog() {
+			    	j$("#dialog").dialog( "close" );
+			    }
+			    
+
+				function PopWindowOut() {
+					j$("#dialog").dialog({ resizable: false, width: 'auto', modal: true});
+				}
+			    			      	        		        
+		</script> 			
 	</apex:outputPanel>		
 </apex:component>
