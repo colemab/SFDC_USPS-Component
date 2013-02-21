@@ -10,6 +10,9 @@ These libraries are loaded via the CDN's listed below.
 Please note: you will need to have a valid account with access to the
 API to use this component.
 
+Please note: you will need to add a remote site under security settings so that the component
+can connect to the post office.  For production this will be: http://production.shippingapis.com
+
 Links:
 
 Blog write-up with example: http://www.forcedisturbances.com/2012/10/vf-component-for-usps-address.html
